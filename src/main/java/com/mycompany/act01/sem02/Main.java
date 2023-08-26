@@ -7,7 +7,7 @@ public class Main {
         Punto p2 = new Punto(4,7);
         Punto p3 = new Punto(8,0);
         
-        Triangulo t = new Triangulo("t",p1,p2,p3);
+        Triangulo t = new Triangulo("Triángulo",p1,p2,p3);
 
         System.out.println("el area es: " + t.calcularAreaFigura());
         System.out.println(t.esRegular());
@@ -19,6 +19,12 @@ public class Main {
 
         Cuadrado c = new Cuadrado("Cuadro",p4,p5,p6,p7);
         System.out.println("El area del cuadrado es: " + c.calcularAreaFigura());
-        
+
+        SuperficiePlana sp = new SuperficiePlana();
+        sp.agregarFigura(t);
+        sp.agregarFigura(c);
+        System.out.println("-----------------------------");
+        System.out.println(sp.mostrarAreas());
+
     }
 }

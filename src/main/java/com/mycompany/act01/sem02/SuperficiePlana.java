@@ -13,6 +13,21 @@ public class SuperficiePlana {
     public void setFigurasGeometricas(List<FiguraGeometrica> figurasGeometricas) {
         this.figurasGeometricas = figurasGeometricas;
     }
+
+    public void agregarFigura(FiguraGeometrica fg){
+        figurasGeometricas.add(fg);
+    }
+
+    public String mostrarAreas(){
+        String text = "";
+        int i = 1;
+        for(FiguraGeometrica fg : figurasGeometricas){
+            text += "Figura "+i+": " + fg.getNombre() + "| Área: " + fg.getArea() + "\n";
+            i++;
+        }
+
+        return text;
+    }
     
     
 }

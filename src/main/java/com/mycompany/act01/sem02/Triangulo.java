@@ -57,8 +57,8 @@ public class Triangulo extends FiguraGeometrica{
         double distancia3 = punto3.getDistancia(punto1);
         
         double s = (distancia1+distancia2+distancia3) / 2; // semiperimetro
-
-        return Math.sqrt(s*(s-distancia1)*(s-distancia2)*(s-distancia3));
+        area = Math.sqrt(s*(s-distancia1)*(s-distancia2)*(s-distancia3));
+        return area;
     }
 
     @Override

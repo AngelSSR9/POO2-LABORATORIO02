@@ -59,6 +59,7 @@ public class Cuadrado extends FiguraGeometrica {
 
     @Override
     boolean esRegular() {
+
         return true;
     }
 }

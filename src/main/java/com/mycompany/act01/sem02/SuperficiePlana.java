@@ -23,6 +23,9 @@ public class SuperficiePlana {
         int i = 1;
         for(FiguraGeometrica fg : figurasGeometricas){
             text += "Figura "+i+": " + fg.getNombre() + "| Área: " + fg.getArea() + "\n";
+            text += "Perimetro: " + fg.getPerimetro() + "\n";
+            text += "INFORMACION FIGURA: " + fg.toString() + "\n";
+            text += "-------------------------------------------\n";
             i++;
         }
 

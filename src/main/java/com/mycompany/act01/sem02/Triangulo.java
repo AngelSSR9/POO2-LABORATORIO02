@@ -1,6 +1,6 @@
 package com.mycompany.act01.sem02;
 
-public class Triangulo extends FiguraGeometrica{
+public class Triangulo extends FiguraGeometrica implements Shape{
     
     private Punto punto1;
     private Punto punto2;
@@ -11,6 +11,7 @@ public class Triangulo extends FiguraGeometrica{
         this.punto1 = punto1;
         this.punto2 = punto2;
         this.punto3 = punto3;
+        area = calcularAreaFigura();
     }
 
     /*public Triangulo(Punto punto1, Punto punto2, Punto punto3, String nombre) {
@@ -47,7 +48,7 @@ public class Triangulo extends FiguraGeometrica{
     @Override
     public String toString() {
         //Accedemos a "nombre" sin tener que utilizar get ni super debido al modificador de acceso protected.
-        return "Triángulo: " + nombre /*getNombre()*/ + "tiene 3 Puntos: " + getPunto1().toString() + "," + getPunto2().toString()+ "," + getPunto3().toString();
+        return "Triángulo: " + nombre /*getNombre()*/ + " tiene 3 Puntos:\n" + getPunto1().toString() + "\n" + getPunto2().toString()+ "\n" + getPunto3().toString();
     }
 
     @Override
@@ -75,4 +76,14 @@ public class Triangulo extends FiguraGeometrica{
         return (distancia1 == distancia2 && distancia2 == distancia3);
     }
 
+    @Override
+    public double obtenerPerimetro() {
+        double distancia1 = punto1.getDistancia(punto2);
+        double distancia2 = punto2.getDistancia(punto3);
+        double distancia3 = punto3.getDistancia(punto1);
+
+        perimetro = distancia1 + distancia2 + distancia3;
+
+        return perimetro;
+    }
 }
